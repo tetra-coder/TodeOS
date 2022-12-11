@@ -1,10 +1,11 @@
 from getpass import getpass
 from webbrowser import open_new_tab
 from os import system
+isAdmin = False
 system("cls")
 print("WARNING: UNDER CONSTRUCTION")
 print("Type help for a list of commands.")
-print("To get access to most commands, type getadmin and type the password.")
+print("To get access to other commands, type getadmin and type the password.")
 print("Type exit to quit.")
 while True:
     cmd = input("$ ")
@@ -15,7 +16,29 @@ while True:
     if cmd == "clear":
         system("cls")
     if cmd == "help":
-        print("Commands: exit, clear, help")
-        print("Admin commands: ")
+        print("Commands: exit, clear, help, banner")
+    if cmd == "banner":
+        print("""
+           .--._.--.
+          ( O     O )
+          /   . .   \
+         .`._______.'.
+        /(           )\
+      _/  \  \   /  /  \_
+   .~   `  \  \ /  /  '   ~.
+  {    -.   \  V  /   .-    }
+_ _`.    \  |  |  |  /    .'_ _
+>_       _} |  |  | {_       _<
+ /. - ~ ,_-'  .^.  `-_, ~ - .\
+         '-'|/   \|`-`
+
+         ToadOS (a collaboration beetween tetra-coder and TodePond)
+        """)
+    if cmd == "getadmin":
+        adminpass = input("Type in the password: ")
+        while adminpass != "88**66h":
+            print("Incorrect password. Try again.")
+            adminpass = input("Type in the password: ")
+        print("You are an admin!")
 system("cls")
 quit()
