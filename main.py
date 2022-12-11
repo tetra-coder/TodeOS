@@ -15,8 +15,21 @@ while True:
         break
     if cmd == "clear":
         system("cls")
+    if cmd == "opc":
+        link = input("Enter a link of your choice: ")
+        system("start chrome.exe " + link)
+    if cmd == "opms":
+        link = input("Enter a link of your choice: ")
+        system("start msedge.exe " + link)
+    if cmd == "opmz":
+        link = input("Enter a link of your choice: ")
+        system("start firefox.exe " + link)
     if cmd == "help":
         print("Commands: exit, clear, help, banner")
+        if isAdmin:
+            print("opc - Opens a link of your choice in Chrome")
+            print("opms - Opens a link of your choice in Microsoft Edge")
+            print("opmz - Opens a link of your choice in Firefox")
     if cmd == "banner":
         print("""
            .--._.--.
