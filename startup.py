@@ -1,6 +1,7 @@
 from time import sleep
 from os import system
 from getpass import getpass
+import hashlib
 system("cls")
 print("Loading ToadOS...")
 # Loading bar from https://www.youtube.com/watch?v=MtYOrIwW1FQ
@@ -20,7 +21,7 @@ for i, item in enumerate(items):
 system("cls")
 while True:
     p = getpass(prompt="Enter Password: ")
-    if p == "9-*h":
+    if  hashlib.sha512(p.encode("utf8")).hexdigest() == "98033c73ceb41ae286a5ada69cb49e272fe9520c56908db028a38a7bbd636dd601d1cddffeea42abeaef53db6555362e423c897061a3984524155e03e21eb9a7":
         break
     else:
         print("Incorrect Password.")

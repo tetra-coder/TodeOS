@@ -45,7 +45,7 @@ _ _`.    \  |  |  |  /    .'_ _
  /. - ~ ,_-'  .^.  `-_, ~ - .\\
          '-'|/   \|`-`
 
-         ToadOS (a collaboration beetween tetra-coder and TodePond)
+         ToadOS (a collaboration beetween tetra-coder, TodePond and Magnogen)
         """)
     if cmd == "getadmin":
         adminpass = input("Type in the password: ")
