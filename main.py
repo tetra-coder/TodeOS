@@ -53,5 +53,6 @@ _ _`.    \  |  |  |  /    .'_ _
             print("Incorrect password. Try again.")
             adminpass = input("Type in the password: ")
         print("You are an admin!")
+        isAdmin = True
 system("cls")
 quit()
