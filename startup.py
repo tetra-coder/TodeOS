@@ -26,4 +26,5 @@ while True:
     else:
         print("Incorrect Password.")
         system("cls")
+    # why the heck is hash checking not working?!
 system("py main.py")
