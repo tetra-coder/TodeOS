@@ -1,7 +1,6 @@
 from time import sleep
 from os import system
 from getpass import getpass
-isAdmin = False
 system("cls")
 print("Loading ToadOS...")
 # Loading bar from https://www.youtube.com/watch?v=MtYOrIwW1FQ
