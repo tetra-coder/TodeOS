@@ -3,7 +3,7 @@ from os import system
 from getpass import getpass
 isAdmin = False
 system("cls")
-print("Loading BerdOS...")
+print("Loading ToadOS...")
 # Loading bar from https://www.youtube.com/watch?v=MtYOrIwW1FQ
 def loadBar(iteration, total, prefix='', suffix='', decimals=1, length=100, fill='>'):
     percent = ('{0:.' + str(decimals) + 'f}').format(100 * (iteration/float(total)))
