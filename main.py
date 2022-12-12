@@ -15,26 +15,26 @@ while True:
     cmd = input("$ ")
     if "sudo" in cmd:
         open_new_tab("https://sandspiel.club/#d4af60c811854a768c36")
-    if cmd == "exit":
+    elif cmd == "exit":
         break
-    if cmd == "clear":
+    elif cmd == "clear":
         system("cls")
-    if cmd == "opc":
+    elif cmd == "opc":
         link = input("Enter a link of your choice: ")
         system("start chrome.exe " + link)
-    if cmd == "opms":
+    elif cmd == "opms":
         link = input("Enter a link of your choice: ")
         system("start msedge.exe " + link)
-    if cmd == "opmz":
+    elif cmd == "opmz":
         link = input("Enter a link of your choice: ")
         system("start firefox.exe " + link)
-    if cmd == "help":
+    elif cmd == "help":
         print("Commands: exit, clear, help, banner")
         if isAdmin:
             print("opc - Opens a link of your choice in Chrome")
             print("opms - Opens a link of your choice in Microsoft Edge")
             print("opmz - Opens a link of your choice in Firefox")
-    if cmd == "banner":
+    elif cmd == "banner":
         print("""
            .--._.--.
           ( O     O )
@@ -50,7 +50,7 @@ _ _`.    \  |  |  |  /    .'_ _
          '-'|/   \|`-`
          ToadOS (a collaboration beetween tetra-coder, TodePond and Magnogen)
         """)
-    if cmd == "getadmin":
+    elif cmd == "getadmin":
         for count in range(1, 3):
             print("Input password:")
             p = getpass(prompt="$* ")
@@ -59,5 +59,7 @@ _ _`.    \  |  |  |  /    .'_ _
                 isAdmin = True
                 break
             else:
-                print("That is not password. Please try again. " + str(count) + "/3")
+                print("That is the not password. Please try again. " + str(count) + "/3")
+	else:
+		print("Whoops! Looks like you've been lost. This command is invalid. Try typing in help?")
 system("cls")
