@@ -4,7 +4,7 @@ from Games.ponggame import pong
 from getpass import getpass
 from webbrowser import open_new_tab
 from os import system
-
+from Games.eldenring import eldenring
 isAdmin = False
 adminHash = 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86'
 system("cls")
@@ -62,6 +62,11 @@ _ _`.    \  |  |  |  /    .'_ _
                 print("That is not password. Please try again. " + str(count) + "/3")
     elif cmd == "pong":
         pong()
+    elif cmd == "eldenring":
+        eldenring()
+    elif cmd == "snakegame":
+        system("cd Games")
+        system("start snakegame.exe")
     elif cmd == "ls":
         ls()
     else:
