@@ -1,6 +1,6 @@
 from System.passwords import hashPassword, adminHash
 from System.ls import ls
-
+from Games.ponggame import pong
 from getpass import getpass
 from webbrowser import open_new_tab
 from os import system
@@ -29,7 +29,7 @@ while True:
         link = input("Enter a link of your choice: ")
         system("start firefox.exe " + link)
     elif cmd == "help":
-        print("Commands: exit, clear, help, banner")
+        print("Commands: exit, clear, help, banner, ls, getadmin")
         if isAdmin:
             print("opc - Opens a link of your choice in Chrome")
             print("opms - Opens a link of your choice in Microsoft Edge")
@@ -60,6 +60,10 @@ _ _`.    \  |  |  |  /    .'_ _
                 break
             else:
                 print("That is not password. Please try again. " + str(count) + "/3")
-    if cmd == "ls":
+    elif cmd == "pong":
+        pong()
+    elif cmd == "ls":
         ls()
+    else:
+        print("The command is invalid. Try the help command to get some help.")
 system("cls")
