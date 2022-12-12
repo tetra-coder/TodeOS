@@ -1,7 +1,7 @@
 from getpass import getpass
 from webbrowser import open_new_tab
-from os import system
-import hashlib
+from os import system, getenv
+from dotenv import load_dotenv
 isAdmin = False
 system("cls")
 print("WARNING: UNDER CONSTRUCTION")
@@ -50,7 +50,8 @@ _ _`.    \  |  |  |  /    .'_ _
         """)
     if cmd == "getadmin":
         adminpass = input("Type in the password: ")
-        while hashlib.sha512(adminpass.encode("utf8")).hexdigest() == "10063f76e693edd8670371210dc9a3217e154a5c261ee1d92d275e1064dd78a11f79362cf11aeb06475f8b74cca6b975af82d966cd04e3b06f8799d2d8ae086a":
+        load_dotenv()
+        while adminpass != getenv("ADMIN_PASSWORD"):
             print("Incorrect password. Try again.")
             adminpass = input("Type in the password: ")
         print("You are an admin!")
