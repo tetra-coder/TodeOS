@@ -5,7 +5,6 @@ import hashlib
 
 isAdmin = False
 system("cls")
-print("WARNING: UNDER CONSTRUCTION")
 print("Type help for a list of commands.")
 print("To get access to other commands, type getadmin and type the password.")
 print("Type exit to quit.")
