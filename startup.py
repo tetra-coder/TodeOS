@@ -1,4 +1,5 @@
 from time import sleep
+import random
 from os import system
 from getpass import getpass
 import hashlib
@@ -18,12 +19,26 @@ loadBar(0, l, prefix='Progress: ', suffix="Complete", length=l)
 for i, item in enumerate(items):
     sleep(0.1)
     loadBar(i + 1, l, prefix="Progress: ", suffix="Complete", length=l)
+
 system("cls")
-while True:
-    p = getpass(prompt="Enter Password: ")
-    if  hashlib.sha512(p.encode("utf8")).hexdigest() == "98033c73ceb41ae286a5ada69cb49e272fe9520c56908db028a38a7bbd636dd601d1cddffeea42abeaef53db6555362e423c897061a3984524155e03e21eb9a7":
+
+# to make a new password, generate its hash with the hashPassword() function
+# and replace it below
+# TODO: find a better way to do this than just a variable here, maybe a file?
+adminHash = 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86'
+def hashPassword(password):
+    return hashlib.sha512(password.encode("utf8")).hexdigest()
+login = False
+for count in range(1, 4):
+    print("Input password")
+    p = getpass(prompt="$* ")
+    if  hashPassword(p) == adminHash:
+        login = True
         break
     else:
-        print("Incorrect Password.")
-        system("cls")
-system("py main.py")
+        print("That is not password. Please try again. " + str(count) + "/3")
+if login:
+    system("py main.py")
+else:
+    print("You have incorrectly typed password 3 times. Exiting...")
+    sleep(3)

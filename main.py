@@ -1,7 +1,8 @@
 from getpass import getpass
 from webbrowser import open_new_tab
-from os import system, getenv
-from dotenv import load_dotenv
+from os import system
+import hashlib
+
 isAdmin = False
 system("cls")
 print("WARNING: UNDER CONSTRUCTION")
@@ -45,16 +46,16 @@ _ _`.    \  |  |  |  /    .'_ _
 >_       _} |  |  | {_       _<
  /. - ~ ,_-'  .^.  `-_, ~ - .\\
          '-'|/   \|`-`
-
          ToadOS (a collaboration beetween tetra-coder, TodePond and Magnogen)
         """)
     if cmd == "getadmin":
-        adminpass = input("Type in the password: ")
-        load_dotenv()
-        while adminpass != getenv("ADMIN_PASSWORD"):
-            print("Incorrect password. Try again.")
-            adminpass = input("Type in the password: ")
-        print("You are an admin!")
-        isAdmin = True
+        for count in range(1, 3):
+            print("Input password:")
+            p = getpass(prompt="$* ")
+            if  hashPassword(p) == adminHash:
+                print("You are an admin!")
+                isAdmin = True
+                break
+            else:
+                print("That is not password. Please try again. " + str(count) + "/3")
 system("cls")
-quit()
