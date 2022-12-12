@@ -48,7 +48,7 @@ _ _`.    \  |  |  |  /    .'_ _
 >_       _} |  |  | {_       _<
  /. - ~ ,_-'  .^.  `-_, ~ - .\\
          '-'|/   \|`-`
-         ToadOS (a collaboration beetween tetra-coder, TodePond and Magnogen)
+         ToadOS (a collaboration beetween tetra-coder, Magnogen and samclane)
         """)
     elif cmd == "getadmin":
         for count in range(1, 3):
