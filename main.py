@@ -7,7 +7,6 @@ adminHash = 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b
 def hashPassword(password):
     return hashlib.sha512(password.encode("utf8")).hexdigest()
 system("cls")
-print("WARNING: UNDER CONSTRUCTION")
 print("Type help for a list of commands.")
 print("To get access to other commands, type getadmin and type the password.")
 print("Type exit to quit.")
