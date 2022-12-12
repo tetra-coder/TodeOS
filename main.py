@@ -59,6 +59,6 @@ _ _`.    \  |  |  |  /    .'_ _
                 break
             else:
                 print("That is the not password. Please try again. " + str(count) + "/3")
-	else:
-		print("Whoops! Looks like you've been lost. This command is invalid. Try typing in help?")
+    else:
+        print("Whoops! Looks like you've been lost. This command is invalid. Try typing in help?")
 system("cls")
