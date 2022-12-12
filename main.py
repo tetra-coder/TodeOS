@@ -1,7 +1,10 @@
+from System.passwords import hashPassword, adminHash
+from System.ls import ls
+
 from getpass import getpass
 from webbrowser import open_new_tab
 from os import system
-import hashlib
+
 isAdmin = False
 adminHash = 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86'
 def hashPassword(password):
@@ -58,7 +61,7 @@ _ _`.    \  |  |  |  /    .'_ _
                 isAdmin = True
                 break
             else:
-                print("That is the not password. Please try again. " + str(count) + "/3")
-    else:
-        print("Whoops! Looks like you've been lost. This command is invalid. Try typing in help?")
+                print("That is not password. Please try again. " + str(count) + "/3")
+    if cmd == "ls":
+        ls()
 system("cls")
