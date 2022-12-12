@@ -2,7 +2,12 @@ from getpass import getpass
 from webbrowser import open_new_tab
 from os import system
 import hashlib
+
 isAdmin = False
+adminHash = 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86'
+def hashPassword(password):
+    return hashlib.sha512(password.encode("utf8")).hexdigest()
+
 system("cls")
 print("WARNING: UNDER CONSTRUCTION")
 print("Type help for a list of commands.")
@@ -49,11 +54,14 @@ _ _`.    \  |  |  |  /    .'_ _
          ToadOS (a collaboration beetween tetra-coder, TodePond and Magnogen)
         """)
     if cmd == "getadmin":
-        adminpass = input("Type in the password: ")
-        while hashlib.sha512(adminpass.encode("utf8")).hexdigest() == "10063f76e693edd8670371210dc9a3217e154a5c261ee1d92d275e1064dd78a11f79362cf11aeb06475f8b74cca6b975af82d966cd04e3b06f8799d2d8ae086a":
-            print("Incorrect password. Try again.")
-            adminpass = input("Type in the password: ")
-        print("You are an admin!")
-        isAdmin = True
+        for count in range(1, 3):
+            print("Input password:")
+            p = getpass(prompt="$* ")
+            if  hashPassword(p) == adminHash:
+                print("You are an admin!")
+                isAdmin = True
+                break
+            else:
+                print("That is not password. Please try again. " + str(count) + "/3")
 system("cls")
 quit()
