@@ -64,11 +64,13 @@ _ _`.    \  |  |  |  /    .'_ _
         pong()
     elif cmd == "eldenring":
         eldenring()
-    elif cmd == "snakegame":
-        system("cd Games")
-        system("start snakegame.exe")
     elif cmd == "ls":
         ls()
+    elif cmd == "games":
+        print("Games can be accessed by simple typing their name into the terminal. Eg. eldenring.")
+        print("Available games: ")
+        print("Pong - pong")
+        print("Elden Ring (Terminal Edition) - eldenring")
     else:
         print("The command is invalid. Try the help command to get some help.")
 system("cls")
